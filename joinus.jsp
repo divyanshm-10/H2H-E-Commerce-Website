@@ -1,0 +1,379 @@
+<%-- 
+    Document   : modal
+    Created on : 30 Mar, 2024, 6:57:44 PM
+    Author     : Hp
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>JSP Page</title>
+        <link href="css/bootstrap.css" rel="stylesheet">
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <script src="js/bootstrap.bundle.js"></script>
+        <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+        <!--<link rel="stylesheet" href="css/joinus-style.css">-->
+    </head>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f4f4f4;s
+        }*/
+        .container{
+          
+          border:2px solid white;
+          border-radius: 10px;
+          box-shadow: 0 0 10px rgba(243, 241, 241, 0);
+          overflow: hidden;
+          width: 200px;
+          height: 600px;
+          width: 500px;
+          max-width: 100%;
+          text-align: center;
+          overflow: hidden;
+          background-color: transparent;
+        }
+        
+          
+      
+/*      section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100vh;
+            background: url('images/girlbackground.jpg');
+            background-repeat: no-repeat;
+            background-size:cover;
+            background-position:center;
+             background-attachment: fixed; 
+             animation:animateBg 5s linear infinite; 
+
+        }*/
+     /* @keyframes animateBg{
+         100%{
+             filter:hue-rotate(360deg);
+         }
+     } */
+     h2{
+        color:black;
+     }
+     h2:hover{
+        color:black;
+        text-shadow: 0 0 5px rgb(221, 181, 19),0 0 25px cornsilk ,0 0 50px cornsilk,0 0 100px cornsilk , 0 0 200px coral;
+     }
+        .input-box {
+            position: relative;
+            width: 400px;
+            margin: 40px 20px;
+            margin-bottom:20px;
+            /* margin:auto; */
+            border-bottom: 2px solid rgb(103, 98, 98);
+        }
+
+        .input-box label {
+            position: absolute;
+            top: 40px;
+            left: 5px;
+            transform: translateY(-50%);
+            font-size: 1em;
+            color:black;
+            pointer-events: none;
+            transition: .5s;
+        }
+
+        .input-box input:focus~label,
+        .input-box input :valid~label {
+            top: -5px;
+        }
+
+        .input-box input {
+            width: 90%;
+            height: 50px;
+            background: transparent;
+            border: none;
+            outline: none;
+            font-size: 1em;
+            color: black;
+            padding: 0 38px 0 5px;
+        }
+
+        .input-box .icon {
+            position: absolute;
+            right: 8px;
+            color:black;
+            font-size: 1.5em;
+            line-height: 57px;
+        }
+
+        .remember-forget {
+            margin: -15px 0 15px;
+            margin-top:10px;
+            font-size: .6em;
+            color:black;
+            display: flex;
+            justify-content: space-between;
+
+        }
+
+        .remember-forget label input {
+            margin-right: 30px;
+        }
+
+        .remember-forget a {
+            color: black;
+            text-decoration: none;
+        }
+
+        .remember-forget a:hover {
+            text-decoration: underline;
+        }
+
+        button {
+            width: 45%;
+            height: 40px;
+            background: rgb(234, 181, 68);
+            border: none;
+            outline: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 1em;
+            color: black;
+            font-weight: 500;
+            box-shadow:0 0 5px cornsilk;
+        }
+        button:hover{
+        box-shadow: 0 0 5px cornsilk,0 0 25px cornsilk ,0 0 50px cornsilk,0 0 100px cornsilk , 0 0 200px coral;
+        }
+
+        .register-link {
+            font-size: .9em;
+            color: black;
+            text-align: center;
+            margin: 25px 0 10px;
+        }
+
+        .register-link p a {
+            color: black;
+            text-decoration: none;
+            font-weight: 300;
+            padding:25px;
+            font-size:20px;
+        }
+
+        .register-link p a:hover {
+            text-decoration: underline;
+            color:blue;
+        }
+        
+        .form-container {
+            position: relative;
+            /* width:300px; */
+            /* height: 450px; */
+            background: transparent;
+            border:2px solid rgba(30, 29, 29, 0.5);
+            border-radius: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            backdrop-filter:blur(5px);
+        }
+       
+        .tabs {
+            margin-top:20px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background-color: black;
+            color:white;
+            border-radius:10px 20px 10px 20px;
+        }
+       
+        .tab {
+            padding: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-size:30px;
+            font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+
+        .tab:hover {
+            color: #eadddd;
+            text-decoration: underline;
+            text-shadow: 0 0 5px cornsilk,0 0 25px cornsilk ,0 0 50px cornsilk,0 0 100px cornsilk , 0 0 200px coral;
+        }
+
+        .form-container {
+            padding: 20px;
+            font-size:25px;
+            margin-top:10px;
+        }
+        
+        .form {
+            display: none;
+            animation: fadeIn 0.5s;
+        }
+
+        .form.active {
+            display: block;
+        }
+        .trigger{
+            margin-right:180px;
+            height:50px;
+            width:150px;
+            /*border-radius:150px;*/
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+    <body>
+      <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary trigger" data-bs-toggle="modal" data-bs-target="#staticBackdrop"style=" border-radius:150px;">
+    <!--<i class="fa-solid fa-book-open-reader">-->
+        Sign Up
+    </i>
+</button>
+      <button type="button" class="btn btn-primary trigger"onclick="showForm('login')" data-bs-toggle="modal" data-bs-target="#staticBackdrop"style=" border-radius:150px;">
+    <!--<i class="fa-solid fa-book-open-reader">-->
+        Log In
+    </i>
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+        <section>
+    <div class="container">
+        <div class="tabs">
+            <div class="tab" onclick="showForm('login')">Login</div>
+            <div class="tab" onclick="showForm('signup')">Signup</div>
+        </div>
+
+        <div class="form-container">
+            <div class="form login">
+                <h2>Login</h2>
+                <form class="form-group" method="post" action="controller.jsp">
+                  <div class="input-box">
+                    <span class="icon">
+                        <ion-icon name="mail-unread"></ion-icon>
+                    </span>
+                      <input type="email" name="email" required>
+                    <label for="">Email</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon">
+                        <ion-icon name="lock-closed"></ion-icon>
+                    </span>
+                    <input type="password" name="password" required>
+                    <label>Password</label>
+                </div>
+                <div class="remember-forget">
+                    <label><input type="checkbox">Remember me</label>
+                    <a href="#">forget password?</a>
+                </div>
+                <button type="submit">login</button>
+                <div class="register-link">
+                    <p>Don't have an account? <div class="tab" onclick="showForm('signup')">Signup</div></p>
+                </div>
+                    
+                </form>
+            </div>
+            
+            <div class="form signup active">
+                <h2 style="margin-top: 2px;">Signup</h2>
+                <form class="form-group" method="post" action="controller.jsp">
+                    <div class="input-box" style="margin-top: 2px;">
+                        <span class="icon">
+                            <ion-icon name="person-circle"></ion-icon>
+                        </span>
+                        <input type="text" name="name"required style="margin-top: 2px;">
+                        <label for=""> Enter Your Name</label>
+                    </div>
+                    <div class="input-box" style="margin-top: 2px;">
+                        <span class="icon">
+                            <ion-icon name="call"></ion-icon>
+                        </span>
+                        <input type="number" name="contactno" required>
+                        <label for=""> Enter Your Phone no.</label>
+                    </div>
+                    
+                    <div class="input-box" style="margin-top: 2px;">
+                        <span class="icon">
+                            <ion-icon name="mail-unread"></ion-icon>
+                        </span>
+                        <input type="email" name="email"required id="email-igup">
+                        <label for=""> Enter Your Email</label>
+                    </div>
+                    <div class="input-box">
+                        <span class="icon">
+                            <ion-icon name="lock-closed"></ion-icon>
+                        </span>
+                        <input type="password" name="password" required id="password-signup">
+                        <label>Enter  your Password</label>
+                    </div>
+                    <!-- <label for="newUsername">Enter your Email</label>
+                    <input type="text" id="newUsername" name="newUsername" required>
+
+                    <label for="newPassword">Enter Your Password</label>
+                    <input type="password" id="newPassword" name="newPassword" required> -->
+                 <button type="submit" style="margin-top: 2px;">Signup</button>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</section>
+    
+    
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script>
+        function showForm(formType) {
+            const loginForm = document.querySelector('.form.login');
+            const signupForm = document.querySelector('.form.signup');
+
+            if (formType === 'login') {
+                loginForm.classList.add('active');
+                signupForm.classList.remove('active');
+            } else {
+                loginForm.classList.remove('active');
+                signupForm.classList.add('active');
+            }
+        }
+        
+    </script>
+<!--      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Understood</button>
+      </div>-->
+    </div>
+  </div>
+</div>
+    </body>
+</html>
